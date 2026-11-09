@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="description" content="Бранн Михаил Сергеевич — backend-разработчик (Laravel, PostgreSQL)">
+    <title>Бранн Михаил Сергеевич — резюме</title>
+    <script>
+        (function () {
+            var savedTheme = null;
+
+            try {
+                savedTheme = localStorage.getItem('theme');
+            } catch (error) {
+                savedTheme = null;
+            }
+
+            var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+            document.documentElement.dataset.theme =
+                savedTheme === 'light' || savedTheme === 'dark'
+                    ? savedTheme
+                    : (prefersDark ? 'dark' : 'light');
+        })();
+    </script>
+    <link rel="stylesheet" href="view/css/main.css">
+</head>
+<body>
+<main class="page">
+    <button type="button" class="theme-toggle" id="theme-toggle"
+            aria-label="Включить тёмную тему" aria-pressed="false">
+        <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+             stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+        <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+             stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+        </svg>
+    </button>
+    <header class="hero">
+        <img class="avatar" src="img/avatar.jpg" alt="Бранн Михаил Сергеевич" width="200" height="200">
+        <div class="hero__body">
+            <h1 class="hero__name">Бранн Михаил Сергеевич</h1>
+            <p class="hero__role">Backend-разработчик (Laravel, PostgreSQL)</p>
+            <ul class="contacts">
+                <li><a href="tel:+79935361812">+7 (993) 536-18-12</a></li>
+                <li><a href="mailto:alunos13@yandex.ru">alunos13@yandex.ru</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="section" aria-labelledby="about-title">
+        <h2 class="section__title" id="about-title">О себе</h2>
+        <p class="about">Последние 2,5 года занимаюсь внутренним порталом на Laravel: интеграции, конструктор
+            страниц, бухгалтерский и зарплатный учёт. До этого несколько лет делал сайты на Bitrix, есть опыт
+            Python (Django, FastAPI). К чужому коду и легаси отношусь спокойно — большая часть работы как раз в
+            поддержке и доработке существующих систем.</p>
+    </section>
+
+    <section class="section" aria-labelledby="skills-title">
+        <h2 class="section__title" id="skills-title">Навыки</h2>
+        <div class="skills">
+            <div class="skills__group">
+                <h3 class="skills__label">Основное</h3>
+                <ul class="tags tags--main">
+                    <li>Laravel</li>
+                    <li>PHP 8</li>
+                    <li>PostgreSQL</li>
+                    <li>MySQL</li>
+                    <li>REST API</li>
+                    <li>gRPC</li>
+                    <li>Vue.js</li>
+                    <li>React</li>
+                    <li>JavaScript</li>
+                    <li>Docker / docker-compose</li>
+                    <li>Git / Git Flow</li>
+                    <li>CI/CD</li>
+                </ul>
+            </div>
+            <div class="skills__group">
+                <h3 class="skills__label">Дополнительно</h3>
+                <ul class="tags">
+                    <li>Python (Django, FastAPI)</li>
+                    <li>Bitrix (D7)</li>
+                    <li>SQL</li>
+                    <li>Figma</li>
+                    <li>Photoshop</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" aria-labelledby="experience-title">
+        <h2 class="section__title" id="experience-title">Опыт работы</h2>
+        <div class="timeline">
+            <details class="job" open>
+                <summary class="job__summary">
+                    <span class="job__main">
+                        <span class="job__company">Продуктовая разработка — внутренний портал</span>
+                        <span class="job__meta">Backend-разработчик (Laravel), middle</span>
+                    </span>
+                    <span class="job__date">январь 2024 — настоящее время</span>
+                    <span class="job__toggle" aria-hidden="true"></span>
+                </summary>
+                <div class="job__body">
+                    <ul>
+                        <li>Первые месяцы (январь–май 2024) поддерживал сайты на Bitrix.</li>
+                        <li>С мая 2024 — разработка и поддержка портала на Laravel + PostgreSQL.</li>
+                        <li>Настройка и поддержка обмена данными со Skillaz, интеграция с gRPC-сервисом staff_admin
+                            и сервисом daData.</li>
+                        <li>Разработка интеграции с Яндекс Аудиториями и Яндекс Метрикой.</li>
+                        <li>Разработка бэкенда конструктора страниц.</li>
+                        <li>Доработка самописной системы бухгалтерского учёта и расчёта зарплат (Laravel + Vue).</li>
+                        <li>Фронтенд: писал отдельные модули на React, поддерживал существующую кодовую базу.</li>
+                        <li>Локальная инфраструктура на docker-compose; при авариях правил конфиги CI и деплоя.</li>
+                        <li>Работа по двухнедельным спринтам, git flow.</li>
+                        <li>Разработку веду через AI-агентов с контролем результата — VS Code + OpenCode Go,
+                            в основном DeepSeek и ChatGPT.</li>
+                    </ul>
+                </div>
+            </details>
+
+            <details class="job">
+                <summary class="job__summary">
+                    <span class="job__main">
+                        <span class="job__company">Интернет-агентство «Истина в маркетинге»</span>
+                        <span class="job__meta">Web-developer (Bitrix)</span>
+                    </span>
+                    <span class="job__date">март — декабрь 2023</span>
+                    <span class="job__toggle" aria-hidden="true"></span>
+                </summary>
+                <div class="job__body">
+                    <ul>
+                        <li>Разработка и поддержка сайтов на Bitrix, доработка шаблонов и компонентов.</li>
+                    </ul>
+                </div>
+            </details>
+
+            <details class="job">
+                <summary class="job__summary">
+                    <span class="job__main">
+                        <span class="job__company">Интернет-агентство Intensa</span>
+                        <span class="job__meta">Web-developer (Bitrix)</span>
+                    </span>
+                    <span class="job__date">февраль 2022 — март 2023</span>
+                    <span class="job__toggle" aria-hidden="true"></span>
+                </summary>
+                <div class="job__body">
+                    <ul>
+                        <li>Разработка и поддержка сайтов на Bitrix, нестандартный функционал на клиенте и сервере.</li>
+                    </ul>
+                </div>
+            </details>
+
+            <details class="job">
+                <summary class="job__summary">
+                    <span class="job__main">
+                        <span class="job__company">Интернет-агентство So-Use</span>
+                        <span class="job__meta">Web-developer</span>
+                    </span>
+                    <span class="job__date">сентябрь 2018 — январь 2022</span>
+                    <span class="job__toggle" aria-hidden="true"></span>
+                </summary>
+                <div class="job__body">
+                    <ul>
+                        <li>Сайты на Bitrix и MODX, нестандартный функционал на клиенте и сервере, контентная
+                            работа, логотипы и иконки.</li>
+                    </ul>
+                </div>
+            </details>
+
+            <details class="job">
+                <summary class="job__summary">
+                    <span class="job__main">
+                        <span class="job__company">Правительство Тульской области (Минтруд)</span>
+                        <span class="job__meta">Аналитик</span>
+                    </span>
+                    <span class="job__date">сентябрь 2016 — август 2018</span>
+                    <span class="job__toggle" aria-hidden="true"></span>
+                </summary>
+                <div class="job__body">
+                    <ul>
+                        <li>Анализ деятельности подведомственных учреждений, участие в разработке нормативных
+                            актов, работа с обращениями граждан и отчётностью.</li>
+                    </ul>
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <section class="section" aria-labelledby="extra-title">
+        <h2 class="section__title" id="extra-title">Дополнительный опыт</h2>
+        <p class="about">Python: API на Django и FastAPI (учебные и личные проекты), автоматизация подсчёта
+            рабочего времени на Bitrix24 + Google Sheets, парсеры.</p>
+    </section>
+
+    <section class="section" aria-labelledby="education-title">
+        <h2 class="section__title" id="education-title">Образование</h2>
+        <ul class="education">
+            <li class="education__item">
+                <div class="education__head">
+                    <h3>Московский государственный университет культуры и искусств</h3>
+                    <span class="education__date">2007–2013</span>
+                </div>
+                <p>Высшее · Социально-культурная деятельность</p>
+            </li>
+            <li class="education__item">
+                <div class="education__head">
+                    <h3>Тульский Областной Колледж Культуры и Искусств</h3>
+                    <span class="education__date">2003–2007</span>
+                </div>
+                <p>Средне-специальное · Художник/мастер резьбы по дереву</p>
+            </li>
+        </ul>
+    </section>
+
+    <footer class="footer">
+        <p>Бранн Михаил Сергеевич</p>
+        <p>© <span id="year">2026</span></p>
+    </footer>
+</main>
+
+<script>
+    (function () {
+        var jobs = Array.prototype.slice.call(document.querySelectorAll('details.job'));
+        var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+        jobs.forEach(function (job) {
+            var summary = job.querySelector('summary');
+            var body = job.querySelector('.job__body');
+
+            if (!summary || !body || typeof body.animate !== 'function') {
+                return;
+            }
+
+            summary.addEventListener('click', function (event) {
+                if (reduceMotion.matches || body.dataset.animating === 'true') {
+                    return;
+                }
+
+                event.preventDefault();
+                body.dataset.animating = 'true';
+                body.classList.add('is-animating');
+
+                function finish() {
+                    body.classList.remove('is-animating');
+                    delete body.dataset.animating;
+                }
+
+                if (job.open) {
+                    var startHeight = body.offsetHeight;
+
+                    var closing = body.animate(
+                        [
+                            { height: startHeight + 'px', opacity: 1 },
+                            { height: '0px', opacity: 0 }
+                        ],
+                        { duration: 200, easing: 'cubic-bezier(0.4, 0, 0.2, 1)' }
+                    );
+
+                    closing.onfinish = function () {
+                        job.open = false;
+                        finish();
+                    };
+                    closing.oncancel = finish;
+                } else {
+                    job.open = true;
+
+                    var endHeight = body.offsetHeight;
+
+                    var opening = body.animate(
+                        [
+                            { height: '0px', opacity: 0 },
+                            { height: endHeight + 'px', opacity: 1 }
+                        ],
+                        { duration: 220, easing: 'cubic-bezier(0.4, 0, 0.2, 1)' }
+                    );
+
+                    opening.onfinish = finish;
+                    opening.oncancel = finish;
+                }
+            });
+        });
+
+        var printState = [];
+
+        window.addEventListener('beforeprint', function () {
+            printState = jobs.map(function (job) {
+                return job.open;
+            });
+
+            jobs.forEach(function (job) {
+                job.open = true;
+            });
+        });
+
+        window.addEventListener('afterprint', function () {
+            jobs.forEach(function (job, index) {
+                if (typeof printState[index] === 'boolean') {
+                    job.open = printState[index];
+                }
+            });
+        });
+
+        var root = document.documentElement;
+        var themeToggle = document.getElementById('theme-toggle');
+        var colorScheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+        function getSavedTheme() {
+            try {
+                var value = localStorage.getItem('theme');
+                return value === 'light' || value === 'dark' ? value : null;
+            } catch (error) {
+                return null;
+            }
+        }
+
+        function syncThemeToggle() {
+            if (!themeToggle) {
+                return;
+            }
+
+            var isDark = root.dataset.theme === 'dark';
+            themeToggle.setAttribute('aria-pressed', String(isDark));
+            themeToggle.setAttribute('aria-label', isDark ? 'Включить светлую тему' : 'Включить тёмную тему');
+        }
+
+        if (themeToggle) {
+            syncThemeToggle();
+
+            themeToggle.addEventListener('click', function () {
+                var nextTheme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+                root.dataset.theme = nextTheme;
+
+                try {
+                    localStorage.setItem('theme', nextTheme);
+                } catch (error) {
+                    /* выбор не сохранится, но переключение продолжит работать */
+                }
+
+                syncThemeToggle();
+            });
+
+            if (typeof colorScheme.addEventListener === 'function') {
+                colorScheme.addEventListener('change', function (event) {
+                    if (getSavedTheme()) {
+                        return;
+                    }
+
+                    root.dataset.theme = event.matches ? 'dark' : 'light';
+                    syncThemeToggle();
+                });
+            }
+        }
+
+        var year = document.getElementById('year');
+        if (year) {
+            year.textContent = new Date().getFullYear();
+        }
+    })();
+</script>
+</body>
+</html>

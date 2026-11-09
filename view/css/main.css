@@ -1,0 +1,587 @@
+:root {
+    color-scheme: light;
+    --bg: #f4f4f2;
+    --surface: #ffffff;
+    --text: #17181a;
+    --muted: #6b7280;
+    --border: #e6e6e3;
+    --border-strong: #c9c9c4;
+    --accent: #17181a;
+    --shadow: 0 1px 2px rgba(20, 20, 20, 0.05), 0 12px 32px rgba(20, 20, 20, 0.04);
+    --radius: 18px;
+}
+
+:root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #0b0c0e;
+    --surface: #121316;
+    --text: #e8e8e6;
+    --muted: #9ca3af;
+    --border: #23252a;
+    --border-strong: #3a3d44;
+    --accent: #e8e8e6;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 12px 32px rgba(0, 0, 0, 0.25);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 48px 16px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: inherit;
+}
+
+a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
+.page {
+    position: relative;
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 56px 64px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+body,
+.page,
+.job,
+.education__item,
+.tags li,
+.job__toggle,
+.theme-toggle {
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+/* Переключатель темы */
+
+.theme-toggle {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    color: var(--text);
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.theme-toggle:hover {
+    background: var(--bg);
+    border-color: var(--border-strong);
+}
+
+.theme-toggle:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+.theme-toggle__icon {
+    width: 18px;
+    height: 18px;
+}
+
+.theme-toggle__icon--sun {
+    display: none;
+}
+
+:root[data-theme="dark"] .theme-toggle__icon--moon {
+    display: none;
+}
+
+:root[data-theme="dark"] .theme-toggle__icon--sun {
+    display: block;
+}
+
+/* Шапка */
+
+.hero {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.avatar {
+    width: 112px;
+    height: 112px;
+    flex: none;
+    object-fit: cover;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background: var(--bg);
+}
+
+.hero__body {
+    min-width: 0;
+}
+
+.hero__name {
+    margin: 0;
+    font-size: clamp(28px, 4.5vw, 38px);
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+}
+
+.hero__role {
+    margin: 10px 0 0;
+    font-size: 17px;
+    color: var(--muted);
+}
+
+.contacts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+    margin: 16px 0 0;
+    padding: 0;
+    font-size: 14px;
+    list-style: none;
+}
+
+.contacts a {
+    color: var(--text);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s ease;
+}
+
+.contacts a:hover {
+    border-bottom-color: var(--border-strong);
+}
+
+/* Секции */
+
+.section {
+    margin-top: 48px;
+}
+
+.section__title {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 0 0 20px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.section__title::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+}
+
+.about {
+    max-width: 70ch;
+    margin: 0;
+}
+
+/* Навыки */
+
+.skills {
+    display: grid;
+    gap: 22px;
+}
+
+.skills__group {
+    display: grid;
+    gap: 10px;
+}
+
+.skills__label {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.tags li {
+    padding: 5px 12px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.tags--main li {
+    border-color: var(--border-strong);
+}
+
+/* Опыт работы */
+
+.timeline {
+    display: grid;
+}
+
+.job {
+    border-top: 1px solid var(--border);
+}
+
+.job:last-child {
+    border-bottom: 1px solid var(--border);
+}
+
+.job__summary {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: 4px 24px;
+    padding: 20px 0;
+    cursor: pointer;
+    list-style: none;
+}
+
+.job__summary::-webkit-details-marker {
+    display: none;
+}
+
+.job__summary:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+.job__main {
+    display: grid;
+    gap: 3px;
+    min-width: 0;
+}
+
+.job__company {
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+}
+
+.job__meta {
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.job__date {
+    font-size: 14px;
+    color: var(--muted);
+    white-space: nowrap;
+}
+
+.job__toggle {
+    position: relative;
+    width: 28px;
+    height: 28px;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.job__summary:hover .job__toggle {
+    border-color: var(--border-strong);
+    background: var(--bg);
+}
+
+.job__toggle::before,
+.job__toggle::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 1.5px;
+    background: var(--text);
+    border-radius: 1px;
+    transform: translate(-50%, -50%);
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.job__toggle::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.job[open] .job__toggle::after {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.job__body {
+    padding: 0 0 22px;
+}
+
+.job__body.is-animating {
+    overflow: hidden;
+}
+
+.job__body ul {
+    display: grid;
+    gap: 6px;
+    margin: 0;
+    padding-left: 20px;
+}
+
+.job__body li::marker {
+    color: var(--muted);
+}
+
+/* Образование */
+
+.education {
+    display: grid;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.education__item {
+    display: grid;
+    gap: 3px;
+    padding: 14px 0;
+    border-top: 1px solid var(--border);
+}
+
+.education__item:last-child {
+    border-bottom: 1px solid var(--border);
+}
+
+.education__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+}
+
+.education__head h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.education__date {
+    font-size: 14px;
+    color: var(--muted);
+    white-space: nowrap;
+}
+
+.education__item p {
+    margin: 0;
+    font-size: 14.5px;
+    color: var(--muted);
+}
+
+/* Подвал */
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 56px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* Адаптивность */
+
+@media screen and (max-width: 720px) {
+    body {
+        padding: 24px 12px;
+    }
+
+    .page {
+        padding: 36px 28px;
+        border-radius: 14px;
+    }
+
+    .theme-toggle {
+        top: 16px;
+        right: 16px;
+    }
+
+    .hero {
+        gap: 20px;
+    }
+
+    .avatar {
+        width: 88px;
+        height: 88px;
+    }
+
+    .section {
+        margin-top: 40px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .job__summary {
+        grid-template-columns: 1fr auto;
+        gap: 4px 16px;
+    }
+
+    .job__date {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .job__toggle {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    body {
+        padding: 0;
+    }
+
+    .page {
+        padding: 28px 20px 36px;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .hero {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .avatar {
+        width: 80px;
+        height: 80px;
+    }
+
+    .hero__role {
+        font-size: 16px;
+    }
+
+    .contacts {
+        gap: 4px 14px;
+        font-size: 13.5px;
+    }
+
+    .section {
+        margin-top: 36px;
+    }
+
+    .education__head {
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .education__head h3 {
+        font-size: 15.5px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Печать */
+
+@media print {
+    :root {
+        --bg: #ffffff;
+        --surface: #ffffff;
+        --text: #000000;
+        --muted: #444444;
+        --border: #cccccc;
+        --border-strong: #999999;
+        --shadow: none;
+    }
+
+    body {
+        padding: 0;
+        background: #ffffff;
+    }
+
+    .page {
+        max-width: none;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .job {
+        break-inside: avoid;
+    }
+
+    .job__summary {
+        cursor: default;
+    }
+
+    .job__toggle {
+        display: none;
+    }
+
+    .theme-toggle {
+        display: none;
+    }
+
+    details.job:not([open]) > .job__body {
+        display: block;
+    }
+
+    .contacts a {
+        border-bottom: 0;
+    }
+
+    .footer {
+        margin-top: 32px;
+    }
+}
